@@ -12,6 +12,12 @@ $products = [
         'date_register' => '2017-06-22',
     ],
     [
+        'name'          => 'Ipad',
+        'description'   => 'mini 5',
+        'value'         =>  800.00,
+        'date_register' => '2019-06-22',
+    ],
+    [
         'name'          => 'Mouse',
         'description'   => 'Razer',
         'value'         =>  125.00,
