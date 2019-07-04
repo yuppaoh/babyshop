@@ -1,0 +1,31 @@
+{# Kế thừa layout backend #}
+{% extends "backend/layouts/layout.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Thêm mới Loại sản phẩm
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Thêm mới Loại sản phẩm
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+{% block content %}
+<form name="frmGopY" id="frmGopY" method="post" action="/babyshop/backend/chudegopy/create.php">
+    <div class="form-group">
+        <label for="cdgy_ma">Mã loại chủ để</label>
+        <input type="text" class="form-control" id="cdgy_ma" name="cdgy_ten" placeholder="Mã loại chủ để" readonly>
+        <small id="lsp_maHelp" class="form-text text-muted">Mã loại chủ đề không được hiệu chỉnh.</small>
+    </div>
+    <div class="form-group">
+        <label for="cdgy_ten">Nội dung góp ý</label>
+        <input type="text" class="form-control" id="cdgy_ten" name="cdgy_ten" placeholder="Nội dung góp ý">
+    </div>
+    <button class="btn btn-primary" name="btnCapNhat">Cập nhật</button>
+</form>
+{% endblock %}
+{# End Nội dung trong block content #}
