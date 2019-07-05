@@ -25,6 +25,6 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     );
 }
 
-// Yêu cầu `Twig` vẽ giao diện được viết trong file `backend/loaisanpham/loaisanpham.html.twig`
-// với dữ liệu truyền vào file giao diện được đặt tên là `ds_loaisanpham`
+// Yêu cầu `Twig` vẽ giao diện được viết trong file `backend/chudegopy/chudegopy.html.twig`
+// với dữ liệu truyền vào file giao diện được đặt tên là `ds_chudegopy`
 echo $twig->render('backend/chudegopy/index.html.twig', ['ds_chudegopy' => $data] );

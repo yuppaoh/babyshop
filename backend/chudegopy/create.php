@@ -10,11 +10,11 @@ include_once(__DIR__.'/../../dbconnect.php');
 if(isset($_POST['btnCapNhat'])) 
 {
     // Lấy dữ liệu người dùng hiệu chỉnh gởi từ REQUEST POST
-    $tenLoai = $_POST['cdgy_ma'];
-    $mota = $_POST['cdgy_ten'];
+    $maLoai = $_POST['cdgy_ma'];
+    $noiDung = $_POST['cdgy_ten'];
 
     // Câu lệnh INSERT
-    $sql = "INSERT INTO `chudegopy` (cdgy_ma, cdgy_ten) VALUES ('" . $tenLoai . "', '". $mota ."');";
+    $sql = "INSERT INTO `chudegopy` (cdgy_ma, cdgy_ten) VALUES ('" . $maLoai . "', '". $noiDung ."');";
 
     // Thực thi INSERT
     mysqli_query($conn, $sql);
