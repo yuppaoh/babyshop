@@ -3,13 +3,13 @@
 
 {# Nội dung trong block title #}
 {% block title %}
-Chủ đề góp ý
+Hình thức thanh toán
 {% endblock %}
 {# End Nội dung trong block title #}
 
 {# Nội dung trong block headline #}
 {% block headline %}
-Danh sách chủ đề góp ý
+Các hình thức thanh toán
 {% endblock %}
 {# End Nội dung trong block headline #}
 
@@ -28,13 +28,13 @@ Danh sách chủ đề góp ý
         </tr>
     </thead>
     <tbody>
-        {% for chudegopy in ds_chudegopy %}
+        {% for hinhthucthanhtoan in ds_hinhthucthanhtoan %}
         <tr>
-            <td>{{ chudegopy.cdgy_ma }}</td>
-            <td>{{ chudegopy.cdgy_ten }}</td>
+            <td>{{ hinhthucthanhtoan.httt_ma }}</td>
+            <td>{{ hinhthucthanhtoan.httt_ten }}</td>
             <td>
-                <!-- Nút sửa, bấm vào sẽ hiển thị form hiệu chỉnh thông tin dựa vào khóa chính `lsp_ma` -->
-                <a href="edit.php?cdgy_ma={{ chudegopy.cdgy_ma }}" class="btn btn-warning">
+                <!-- Nút sửa, bấm vào sẽ hiển thị form hiệu chỉnh thông tin dựa vào khóa chính `httt_ma` -->
+                <a href="edit.php?httt_ma={{ chudegopy.cdgy_ma }}" class="btn btn-warning">
                     <span data-feather="edit"></span> Sửa
                 </a>
 
