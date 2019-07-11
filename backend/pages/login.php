@@ -39,25 +39,32 @@ if(isset($_POST['btnDangNhap']))
             echo 'Đăng nhập thành công!';
             $_SESSION['username'] = $username;
             $_SESSION['trangthai'] = 1; // 1: Đăng nhập thành công; 0: Thất bại
+            header('location:dashboard.php');
         } 
     }
     else {
-        echo 'Đăng nhập thất bại!';
+        $loidangnhap = 'Đăng nhập thất bại!';
+        // Yêu cầu `Twig` vẽ giao diện được viết trong file `backend/pages/login.html.twig`
+        // với dữ liệu truyền vào file giao diện được đặt tên là `login`
+        echo $twig->render('backend/pages/login.html.twig', [
+            'loidangnhap' => $loidangnhap
+        ]);
     }
     // Đóng kết nối
     mysqli_close($conn);
 
 }
-
-// Nếu trong SESSION có giá trị của key 'username' <-> người dùng đã đăng nhập thành công
-// Điều hướng người dùng về trang DASHBOARD
-if(isset($_SESSION['username'])) {
-    // echo "<h1>Xin chào mừng ". $_SESSION['username'] ."</h1>";
-    // echo session_save_path();
-    header('location:dashboard.php');
-}
 else {
-    // Yêu cầu `Twig` vẽ giao diện được viết trong file `backend/pages/login.html.twig`
-    // với dữ liệu truyền vào file giao diện được đặt tên là `login`
-    echo $twig->render('backend/pages/login.html.twig' );
+    // Nếu trong SESSION có giá trị của key 'username' <-> người dùng đã đăng nhập thành công
+    // Điều hướng người dùng về trang DASHBOARD
+    if(isset($_SESSION['username'])) {
+        // echo "<h1>Xin chào mừng ". $_SESSION['username'] ."</h1>";
+        // echo session_save_path();
+        header('location:dashboard.php');
+    }
+    else {
+        // Yêu cầu `Twig` vẽ giao diện được viết trong file `backend/pages/login.html.twig`
+        // với dữ liệu truyền vào file giao diện được đặt tên là `login`
+        echo $twig->render('backend/pages/login.html.twig' );
+    }
 }

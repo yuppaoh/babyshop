@@ -14,7 +14,8 @@
 
     <!-- Block title - Đục lỗ trên giao diện bố cục chung, đặt tên là `title` -->
     <title>Nền tảng - Kiến thức cơ bản về WEB | 
-        Đăng nhập
+        {% block title %}
+        {% endblock %}
     </title>
     <!-- End block title -->
 
@@ -22,6 +23,31 @@
 
 <body class="app flex-row align-items-center">
     
+    {% if errors %}
+    <div id="thongbao" class="alert alert-danger face" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <ul>
+            {% for fields in errors %}
+                {% for field in fields %}
+                <li>{{ field.msg }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}    
+
+    <!-- header -->
+    {{ include('backend/layouts/includes/header.html.twig') }}
+    <!-- end header -->
+
+    <div class="container-fluid" style="margin-top: 100px;">
+            {% if loidangnhap %}
+                <h1>{{loidangnhap}}</h1>
+            {% endif %}  
+
+
     <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
     <form name="frmdangnhap" id="frmdangnhap" method="post" action="/babyshop/backend/pages/login.php">
         <div class="container">
@@ -38,7 +64,7 @@
                                             <i class="icon-user"></i>
                                         </span>
                                     </div>
-                                    <input class="form-control" type="text" name="username" placeholder="Tên đăng nhập">
+                                    <input class="form-control" type="text" id="username" name="username" placeholder="Tên đăng nhập">
                                 </div>
                                 <div class="input-group mb-4">
                                     <div class="input-group-prepend">
@@ -46,7 +72,7 @@
                                             <i class="icon-lock"></i>
                                         </span>
                                     </div>
-                                    <input class="form-control" type="password" name="password" placeholder="Mật khẩu">
+                                    <input class="form-control" type="password" id="password" name="password" placeholder="Mật khẩu">
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
@@ -73,6 +99,8 @@
         </div>
     </form>
     <!-- End block content -->
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -81,11 +109,75 @@
     <script src="/babyshop/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="/babyshop/assets/vendor/feather/feather.min.js"></script>
 
+    <!-- jquery-validation -->
+    <script src="/babyshop/assets/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/babyshop/assets/vendor/jquery-validation/localization/messages_vi.min.js"></script>
+
     <!-- Custom script - Các file js do mình tự viết -->
     <script src="/babyshop/assets/backend/js/app.js"></script>
 
     <!-- Block custom-scripts - Đục lỗ trên giao diện bố cục chung, đặt tên là `custom-scripts` -->
             <!-- End block custom-scripts -->
+
+ 
+<script>
+    $(document).ready(function () {
+        $("#frmdangnhap").validate({
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 50
+                },
+                password: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 50
+                }
+            },
+            messages: {
+                username: {
+                    required: "Vui lòng nhập Username",
+                    minlength: "Username phải có ít nhất 3 ký tự",
+                    maxlength: "Username không được vượt quá 50 ký tự"
+                },
+                password: {
+                    required: "Vui lòng nhập password",
+                    minlength: "Password phải có ít nhất 3 ký tự",
+                    maxlength: "Password không được vượt quá 50 ký tự"
+                },
+            },
+            errorElement: "em",
+            errorPlacement: function (error, element) {
+                // Thêm class `invalid-feedback` cho field đang có lỗi
+                error.addClass("invalid-feedback");
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.parent("label"));
+                } else {
+                    error.insertAfter(element);
+                }
+                // Thêm icon "Kiểm tra không Hợp lệ"
+                if (!element.next("span")[0]) {
+                    $("<span class='glyphicon glyphicon-remove form-control-feedback'></span>")
+                        .insertAfter(element);
+                }
+            },
+            success: function (label, element) {
+                // Thêm icon "Kiểm tra Hợp lệ"
+                if (!$(element).next("span")[0]) {
+                    $("<span class='glyphicon glyphicon-ok form-control-feedback'></span>")
+                        .insertAfter($(element));
+                }
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-invalid").removeClass("is-valid");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-valid").removeClass("is-invalid");
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

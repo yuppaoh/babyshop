@@ -10,3 +10,7 @@ $loader = new Twig_Loader_Filesystem(__DIR__.'/templates');
 
  // Khởi tạo Twig
 $twig = new Twig_Environment($loader);
+
+
+// Tạo biến global để có thể sử dụng trong tất cả các view được render bởi TWIG
+$twig->addGlobal('session', $_SESSION);

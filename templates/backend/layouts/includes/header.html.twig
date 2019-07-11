@@ -10,28 +10,33 @@
                         <a class="nav-link" href="/babyshop/backend/pages/dashboard">Quản trị</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/babyshop/frontend/sanpham/danhsach">Sản phẩm</a>
+                        <a class="nav-link" href="/babyshop/backend/sanpham/danhsach">Sản phẩm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/babyshop/frontend/pages/gioithieu">Giới thiệu</a>
+                        <a class="nav-link" href="/babyshop/backend/pages/gioithieu">Giới thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/babyshop/frontend/pages/lienhe">Liên hệ</a>
+                        <a class="nav-link" href="/babyshop/backend/pages/lienhe">Liên hệ</a>
                     </li>
                 </ul>
-                <form class="form-inline mt-2 mt-md-0" method="get" action="/babyshop/frontend/pages/timkiem">
+                <form class="form-inline mt-2 mt-md-0" method="get" action="/babyshop/backend/pages/timkiem">
                     <input class="form-control mr-sm-2" type="text" placeholder="Tìm kiếm" aria-label="Search" name="keyword_tensanpham">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
                 </form>
             </div>
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
-                    <a class="nav-link" href="/babyshop/frontend/thanhtoan/giohang">Giỏ hàng</a>
+                    <a class="nav-link" href="/babyshop/backend/thanhtoan/giohang">Giỏ hàng</a>
                 </li>
                 <li class="nav-item text-nowrap">
-                                    <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
+                    {% if session['username'] %}
+                    <!-- Nếu đã đăng nhập thì hiển thị nút Đăng xuất -->
+                    <a class="nav-link" href="/babyshop/backend/pages/logout.php">Đăng xuất</a>
+                    {% else %}
+                    <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
                     <a class="nav-link" href="/babyshop/backend/pages/login.php">Đăng nhập</a>
-                                </li>
+                    {% endif %}
+                </li>
             </ul>
         </div>
     </nav>
