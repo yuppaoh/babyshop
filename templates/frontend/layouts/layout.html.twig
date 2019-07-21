@@ -5,15 +5,26 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">  
+      
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/babyshop/assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
 
     <!-- Custom css - Các file css do chúng ta tự viết -->
-    <link rel="stylesheet" href="/babyshop/assets/frontend/css/style.css" type="text/css" />
+    <!--<link rel="stylesheet" href="/babyshop/assets/frontend/css/style.css" type="text/css" />
+-->
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="/babyshop/css/landing-page.min.css" rel="stylesheet">
 
     <!-- Block title - Đục lỗ trên giao diện bố cục chung, đặt tên là `title` -->
-    <title>myShop | 
+    <title>Baitap | 
         {% block title %}
         {% endblock %}
     </title>
@@ -21,58 +32,195 @@
 </head>
 
 <body>
-    
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Shopping</a>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Tìm kiếm" aria-label="Search">
-        <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">Đăng xuất</a>
-            </li>
-        </ul>
-    </nav>
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <span data-feather="home"></span>
-                                Trang chủ <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                    </ul>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+          <a class="navbar-brand" href="#" style="padding-left: 10px; padding-right: 10px;">A17080</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">Sản phẩm</a>
+              <a class="nav-item nav-link" href="#">Liên hệ</a>
+              <a class="nav-item nav-link" href="#">Đăng nhập</a>
+              </div>
+          </div>
+      
+          <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Nội dung tìm kiếm" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+          </form>
+      </nav>
+      
+        <!-- Masthead -->
+        <header class="masthead text-white text-center">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-9 mx-auto">
+                <h1 class="mb-5">Trang thông tin 4.0</h1>
+              </div>
+              <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <form>
+                  <div class="form-row">
+                    <div class="col-12 col-md-9 mb-2 mb-md-0">
+                      <input type="email" class="form-control form-control-lg" placeholder="Email của bạn...">
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <button type="submit" class="btn btn-block btn-lg btn-primary">Đăng nhập!</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </header>
+      
+      
+        <!-- Image Showcases -->
+        <section class="showcase">
+          <div class="container-fluid p-0">
+            <div class="row no-gutters">
+      
+              <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('/babyshop/img/bg-showcase-1.jpg');"></div>
+              <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Mobile</h2>
+                <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-lg-6 text-white showcase-img" style="background-image: url('/babyshop/img/bg-showcase-2.jpg');"></div>
+              <div class="col-lg-6 my-auto showcase-text">
+                <h2>PC & Laptop</h2>
+                <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('/babyshop/img/bg-showcase-3.jpg');"></div>
+              <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <h2>Others</h2>
+                <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <!-- Testimonials -->
+        <section class="testimonials text-center bg-light">
+          <div class="container">
+            <h2 class="mb-5">What people are saying...</h2>
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                  <img class="img-fluid rounded-circle mb-3" src="/babyshop/img/testimonials-1.jpg" alt="">
+                  <h5>Margaret E.</h5>
+                  <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
                 </div>
-            </nav>
-
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                      <!-- Block headline - Đục lỗ trên giao diện bố cục chung, đặt tên là `headline` -->
-                      {% block headline %}
-                      {% endblock %}
-                      <!-- End block headline -->
+              </div>
+              <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                  <img class="img-fluid rounded-circle mb-3" src="/babyshop/img/testimonials-2.jpg" alt="">
+                  <h5>Fred S.</h5>
+                  <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
                 </div>
-
-                <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
-                {% block content %}
-                {% endblock %}
-                <!-- End block content -->
-            </main>
-        </div>
-    </div>
-
+              </div>
+              <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                  <img class="img-fluid rounded-circle mb-3" src="/babyshop/img/testimonials-3.jpg" alt="">
+                  <h5>Sarah W.</h5>
+                  <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <!-- Call to Action -->
+        <section class="call-to-action text-white text-center">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-9 mx-auto">
+                <h2 class="mb-4">Đăng ký tài khoản!</h2>
+              </div>
+              <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                <form>
+                  <div class="form-row">
+                    <div class="col-12 col-md-9 mb-2 mb-md-0">
+                      <input type="email" class="form-control form-control-lg" placeholder="Nhập email...">
+                    </div>
+                    <div class="col-12 col-md-3">
+                      <button type="submit" class="btn btn-block btn-lg btn-primary">Đăng ký!</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <!-- Footer -->
+        <footer class="footer bg-light">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                <ul class="list-inline mb-2">
+                  <li class="list-inline-item">
+                    <a href="#">Trang chủ</a>
+                  </li>
+                  <li class="list-inline-item">&sdot;</li>
+                  <li class="list-inline-item">
+                    <a href="#">Sản phẩm</a>
+                  </li>
+                  <li class="list-inline-item">&sdot;</li>
+                  <li class="list-inline-item">
+                    <a href="#">Liên hệ</a>
+                  </li>
+                  <li class="list-inline-item">&sdot;</li>
+                  <li class="list-inline-item">
+                    <a href="#">Chính sách</a>
+                  </li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0">&copy; Hoàng Quý - 2019</p>
+              </div>
+              <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item mr-3">
+                    <a href="#">
+                      <i class="fab fa-facebook fa-2x fa-fw"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item mr-3">
+                    <a href="#">
+                      <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#">
+                      <i class="fab fa-instagram fa-2x fa-fw"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      
+        <!-- Bootstrap core JavaScript -->
+        <script src="/babyshop/vendor/jquery/jquery.min.js"></script>
+        <script src="/babyshop/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/babyshop/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="/babyshop/assets/vendor/popperjs/popper.min.js"></script>
-    <script src="/babyshop/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/babyshop/assets/vendor/popperjs/popper.min.js"></script>    
     <script src="/babyshop/assets/vendor/feather/feather.min.js"></script>
 
     <!-- Custom script - Các file js do mình tự viết -->
     <script src="/babyshop/assets/frontend/js/app.js"></script>
+
+
 </body>
 
 </html>

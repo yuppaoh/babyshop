@@ -1,101 +1,42 @@
-{# Kế thừa layout frontend #}
+{# Kế thừa layout backend #}
 {% extends "frontend/layouts/layout.html.twig" %}
 
 {# Nội dung trong block title #}
 {% block title %}
-PHP frontend
+Bai tap he
 {% endblock %}
 {# End Nội dung trong block title #}
 
 {# Nội dung trong block headline #}
 {% block headline %}
-
+Thong tin trang
 {% endblock %}
 {# End Nội dung trong block headline #}
 
 {# Nội dung trong block content #}
 {% block content %}
-<style>
-    div{
-        /*border: 1px solid red;*/
-    }
-</style>
-
-<div class="album py-5 bg-light">
-    <div class="album py-5 bg-light">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card mb-4 shadow-sm">
-                    <div class="row">
-                        <div class="col-md-4" style="background: url(/assets/uploads/ss-tab-a-2017.jpg)"><img src="#"></div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                    <small class="text-muted">9 mins</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                            
-            </div>
-
-
-            <div class="col-md-6">
-                <div class="card mb-4 shadow-sm">
-                    
-                    <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</div>
-
-
-
-
-    <footer class="footer bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="#">About</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Contact</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
-                        <li class="list-inline-item"><span>⋅</span></li>
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                    </ul>
-                    <p class="text-muted small mb-4 mb-lg-0">© Hoang Quy 2019</p>
-                </div>
-                <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    <table border="1" style="width: 80%;">
+        <thead>
+            <tr>
+                <td>Product</td>
+                <td>Description</td>
+                <td>Value</td>
+                <td>Date</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <!--
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.value }}</td>
+                    <td>{{ product.date_register|date("m/d/Y") }}</td>
+                </tr>
+            -->
+            {% endfor %}
+        </tbody>
+    </table>
+    <br/>
 {% endblock %}
 {# End Nội dung trong block content #}

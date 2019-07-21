@@ -27,4 +27,4 @@ $products = [
 
 // Yêu cầu `Twig` vẽ giao diện được viết trong file `backend/pages/dashboard.html.twig`
 // với dữ liệu truyền vào file giao diện được đặt tên là `products`
-echo $twig->render('frontend/pages/dashboard.html.twig', ['products' => $products1] );
+echo $twig->render('frontend/pages/dashboard.html.twig', ['products' => $products] );
