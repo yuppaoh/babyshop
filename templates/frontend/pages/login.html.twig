@@ -1,0 +1,142 @@
+{# Kế thừa layout frontend #}
+{% extends "frontend/layouts/layout.html.twig" %}
+
+{# Nội dung trong block title #}
+{% block title %}
+Login
+{% endblock %}
+{# End Nội dung trong block title #}
+
+{# Nội dung trong block headline #}
+{% block headline %}
+Đăng nhập
+{% endblock %}
+{# End Nội dung trong block headline #}
+
+{# Nội dung trong block content #}
+{% block content %}
+<!-- Masthead -->
+
+{% if errors %}
+    <div id="thongbao" class="alert alert-danger face" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <ul>
+            {% for fields in errors %}
+                {% for field in fields %}
+                <li>{{ field.msg }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+
+<header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container" style="width: 400px; background: yellow; color: red;">
+        {% if loidangnhap %}
+        <h3>{{loidangnhap}}</h3>
+        {% endif %}
+    </div>
+    <div class="container" style="background:chartreuse; width: 400px; height: 300px;">
+        <div class="row">
+        <div class="col-xl-9 mx-auto" style="padding-top: 20px;">
+            <h3 class="mb-5">Thông tin đăng nhập</h3>
+        </div>
+        <div class="col-xl-9 mx-auto" style="background:gainsboro">
+            <form name="frmdangnhap" id="frmdangnhap" method="POST" action="/babyshop/frontend/pages/login.php">
+            <div class="form-row" style="height: 20px;"></div>    
+            <div class="form-row">
+                <div class="col-12 col-md-12 mb-2 mb-md-0">
+                    <input type="text" name="username" class="form-control form-control-md" placeholder="Username">
+                </div>
+            </div>
+            <div class="form-row" style="height: 5px;"></div>
+            <div class="form-row">
+                <div class="col-12 col-md-12 mb-2 mb-md-0">
+                    <input type="password" name="password" class="form-control form-control-md" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-row" style="height: 5px;"></div>
+            
+            <div class="form-row">
+                <div class="col-12 col-md-6">
+                    <button type="submit" name="btnDangNhap" class="btn btn-block btn-md btn-primary">Đăng nhập</button>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="txt" style="height: 100%; padding-top: 6px;">
+                        <a href="#">Quên mật khẩu!</a>
+                    </div>
+                </div>    
+            </div>
+            <div class="form-row" style="height: 20px;"></div>
+            </form>
+        </div>
+        </div>
+    </div>
+</header>
+
+
+<script>
+    $(document).ready(function () {
+        $("#frmdangnhap").validate({
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 50
+                },
+                password: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 50
+                }
+            },
+            messages: {
+                username: {
+                    required: "Vui lòng nhập Username",
+                    minlength: "Username phải có ít nhất 3 ký tự",
+                    maxlength: "Username không được vượt quá 50 ký tự"
+                },
+                password: {
+                    required: "Vui lòng nhập password",
+                    minlength: "Password phải có ít nhất 3 ký tự",
+                    maxlength: "Password không được vượt quá 50 ký tự"
+                },
+            },
+            errorElement: "em",
+            errorPlacement: function (error, element) {
+                // Thêm class `invalid-feedback` cho field đang có lỗi
+                error.addClass("invalid-feedback");
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.parent("label"));
+                } else {
+                    error.insertAfter(element);
+                }
+                // Thêm icon "Kiểm tra không Hợp lệ"
+                if (!element.next("span")[0]) {
+                    $("<span class='glyphicon glyphicon-remove form-control-feedback'></span>")
+                        .insertAfter(element);
+                }
+            },
+            success: function (label, element) {
+                // Thêm icon "Kiểm tra Hợp lệ"
+                if (!$(element).next("span")[0]) {
+                    $("<span class='glyphicon glyphicon-ok form-control-feedback'></span>")
+                        .insertAfter($(element));
+                }
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-invalid").removeClass("is-valid");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-valid").removeClass("is-invalid");
+            }
+        });
+    });
+</script>
+
+{% endblock %}
+{# End Nội dung trong block content #}
