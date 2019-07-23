@@ -16,8 +16,8 @@ Login
 {# Nội dung trong block content #}
 {% block content %}
 <!-- Masthead -->
-
-{% if errors %}
+<header class="masthead text-white text-center">
+    {% if errors %}
     <div id="thongbao" class="alert alert-danger face" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -30,55 +30,68 @@ Login
             {% endfor %}
         </ul>
     </div>
-{% endif %}
-
-
-<header class="masthead text-white text-center">
+    {% endif %}
     <div class="overlay"></div>
-    <div class="container" style="width: 400px; background: yellow; color: red;">
-        {% if loidangnhap %}
-        <h3>{{loidangnhap}}</h3>
-        {% endif %}
-    </div>
-    <div class="container" style="background:chartreuse; width: 400px; height: 300px;">
+    
+    <div class="container">
         <div class="row">
-        <div class="col-xl-9 mx-auto" style="padding-top: 20px;">
-            <h3 class="mb-5">Thông tin đăng nhập</h3>
-        </div>
-        <div class="col-xl-9 mx-auto" style="background:gainsboro">
-            <form name="frmdangnhap" id="frmdangnhap" method="POST" action="/babyshop/frontend/pages/login.php">
-            <div class="form-row" style="height: 20px;"></div>    
-            <div class="form-row">
-                <div class="col-12 col-md-12 mb-2 mb-md-0">
-                    <input type="text" name="username" class="form-control form-control-md" placeholder="Username">
-                </div>
-            </div>
-            <div class="form-row" style="height: 5px;"></div>
-            <div class="form-row">
-                <div class="col-12 col-md-12 mb-2 mb-md-0">
-                    <input type="password" name="password" class="form-control form-control-md" placeholder="Password">
-                </div>
-            </div>
-            <div class="form-row" style="height: 5px;"></div>
-            
-            <div class="form-row">
-                <div class="col-12 col-md-6">
-                    <button type="submit" name="btnDangNhap" class="btn btn-block btn-md btn-primary">Đăng nhập</button>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="txt" style="height: 100%; padding-top: 6px;">
-                        <a href="#">Quên mật khẩu!</a>
+            <div class="col-xl-9 mx-auto">
+                <form class="mx-auto" name="frmdangnhap" id="frmdangnhap" method="POST" action="/babyshop/frontend/pages/login.php" style="background: white; padding: 0px 20px 0px 20px; width: 350px; border-radius: 8px;">
+                <div class="form-row" style="height: 20px;"></div>
+                <div class="form-row">
+                    <div class="col-12 col-md-12 mb-2 mb-md-0">
+                        <h2 style="color: blue; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Đăng nhập</h2>
                     </div>
-                </div>    
+                </div>
+                <div class="form-row" style="height: 20px;"></div>
+                
+                    <div class="container" style="text-align: left; color:red;">
+                        {% if loidangnhap %}
+                        <a><i>{{loidangnhap}}</i></a>
+                        {% endif %}
+                    </div>
+                
+                <div class="form-row">
+                    <div class="input-group col-12 col-md-12 mb-2 mb-md-0">
+                            <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-user"></i>
+                                    </span>
+                                </div>
+                        <input type="text" id="username" name="username" class="form-control form-control-md" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-row" style="height: 10px;"></div>
+                <div class="form-row">
+                    <div class="input-group col-12 col-md-12 mb-2 mb-md-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="icon-lock"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="password" class="form-control form-control-md" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-row" style="height: 15px;"></div>
+                
+                <div class="form-row">
+                    <div class="col-12 col-md-6">
+                        <button type="submit" name="btnDangNhap" class="btn btn-block btn-md btn-primary">Đăng nhập</button>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="txt" style="height: 100%; padding-top: 6px;">
+                            <a href="#">Quên mật khẩu!</a>
+                        </div>
+                    </div>    
+                </div>
+                <div class="form-row" style="height: 20px;"></div>
+                </form>
             </div>
-            <div class="form-row" style="height: 20px;"></div>
-            </form>
-        </div>
         </div>
     </div>
 </header>
 
-
+                                                                                                                                                                                                                                                                        
 <script>
     $(document).ready(function () {
         $("#frmdangnhap").validate({

@@ -44,7 +44,17 @@
               <a class="nav-item nav-link active" href="home.php">Trang chủ <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="#">Sản phẩm</a>
               <a class="nav-item nav-link" href="#">Liên hệ</a>
-              <a class="nav-item nav-link" href="login.php">Đăng nhập</a>
+              
+              {% if session['username'] %}
+            <!-- Nếu đã đăng nhập thì hiển thị nút Đăng xuất -->
+            <a class="nav-link" href="logout.php">Đăng xuất</a>
+            <a class="nav-link btn btn-outline-success my-2 my-sm-0" href="#"><i>[User: {{ session['username'] }}]</i></a>
+            {% else %}
+            <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
+            <a class="nav-link" href="login.php">Đăng nhập</a>
+            <a class="nav-link" href="login.php">Đăng ký</a>
+            {% endif %}
+
               </div>
           </div>
       
