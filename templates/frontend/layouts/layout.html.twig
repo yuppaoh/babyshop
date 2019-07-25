@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="/babyshop/assets/vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
 
     <!-- Custom css - Các file css do chúng ta tự viết -->
-    <!--<link rel="stylesheet" href="/babyshop/assets/frontend/css/style.css" type="text/css" />
--->
+    <link rel="stylesheet" href="/babyshop/assets/frontend/css/style.css" type="text/css" />
+
     <!-- Custom fonts for this template -->
     <link href="/babyshop/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="/babyshop/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
@@ -43,12 +43,12 @@
               <div class="navbar-nav">
               <a class="nav-item nav-link active" href="home.php">Trang chủ <span class="sr-only">(current)</span></a>
               <a class="nav-item nav-link" href="#">Sản phẩm</a>
-              <a class="nav-item nav-link" href="#">Liên hệ</a>
+              <a class="nav-item nav-link" href="aboutus.php">Liên hệ</a>
               
-              {% if session['username'] %}
+            {% if session['username'] %}
             <!-- Nếu đã đăng nhập thì hiển thị nút Đăng xuất -->
             <a class="nav-link" href="logout.php">Đăng xuất</a>
-            <a class="nav-link btn btn-outline-success my-2 my-sm-0" href="#"><i>[User: {{ session['username'] }}]</i></a>
+            <a class="btn btn-outline-success my-2 my-sm-0" style="border-color:#ffe484;" href="#"><i>[User: {{ session['username'] }}]</i></a>
             {% else %}
             <!-- Nếu chưa đăng nhập thì hiển thị nút Đăng nhập -->
             <a class="nav-link" href="login.php">Đăng nhập</a>
@@ -130,8 +130,8 @@
     <script src="/babyshop/assets/frontend/js/app.js"></script>
 
     <!-- Block custom-scripts - Đục lỗ trên giao diện bố cục chung, đặt tên là `custom-scripts` -->
-    <!--{% block customscripts %}
-    {% endblock %}-->
+    {% block customscripts %}
+    {% endblock %}
     <!-- End block custom-scripts -->
 
 </body>
