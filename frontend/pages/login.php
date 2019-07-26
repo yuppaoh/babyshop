@@ -36,7 +36,7 @@ if(isset($_POST['btnDangNhap']))
             echo $twig->render('frontend/pages/user-not-activated.html.twig' );
         }
         else { //Đã kích hoạt
-            echo 'Đăng nhập thành công!';
+            // echo 'Đăng nhập thành công!';
             $_SESSION['username'] = $username;
             $_SESSION['trangthai'] = 1; // 1: Đăng nhập thành công; 0: Thất bại
             header('location:home.php');
@@ -65,6 +65,6 @@ else {
     else {
         // Yêu cầu `Twig` vẽ giao diện được viết trong file `backend/pages/login.html.twig`
         // với dữ liệu truyền vào file giao diện được đặt tên là `login`
-        echo $twig->render('frontend/pages/login.html.twig' );
+        echo $twig->render('frontend/pages/login.html.twig');
     }
 }
