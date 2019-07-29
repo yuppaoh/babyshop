@@ -28,6 +28,12 @@ Login
     div{
         /* background:lightsteelblue; */
     }
+
+    @media (min-width: 768px) {
+        .myproduct {
+            height: 180px;
+        }
+    }
 </style>
 
 <div style="height: 100px;"></div>
@@ -40,16 +46,16 @@ Login
         <div class="col-md-4">
         <div class="myproduct">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-xs-6">
                     <div class="mx-auto row productImg">
-                        <img style="height: 100px; width: 90px;" src="/babyshop/assets/uploads/{{ hinhsanpham.hsp_tentaptin }}" class="img-fluid" width="100px"/>
+                        <img style="height: 100%; width: 100%; object-fit: cover;" src="/babyshop/assets/uploads/{{ hinhsanpham.hsp_tentaptin }}" class="img-fluid" width="100px"/>
                     </div>
                     <div class="row mx-auto">
                         <span style="color: red;"><small><b>{{ hinhsanpham.sp_gia }}</b></small></span>
                     </div>
                     
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 col-xs-6" style="font-size: 1.1em;">
                     <b>{{ hinhsanpham.sp_ten }}</b><br/>
                     {{ hinhsanpham.sp_mota_ngan }}<br/>
                     <p>
