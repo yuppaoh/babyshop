@@ -16,34 +16,36 @@ Login
 {# Nội dung trong block content #}
 {% block content %}
 <style type="text/css">
-    .myproduct{
-        margin: 10px 1px 10px 1px;
-        padding: 5px 5px 5px 5px;
-        background:khaki;
-        border: 1px darkolivegreen black;
-        border-radius: 10px;
-        box-shadow: 5px 5px 5px #666;
+    
+    .preproduct{
+        margin: 0px;
+        padding: 3px;
+        /* border: 1px dotted blue; */
     }
-
-    div{
-        /* background:lightsteelblue; */
+    .myproduct{
+        padding: 5px 5px 5px 5px;
+        /* background:khaki; */
+        /* border: 1px darkolivegreen black; */
+        /* border: 1px dotted red; */
     }
 
     @media (min-width: 768px) {
         .myproduct {
-            height: 180px;
+            height: 200px;
         }
+    }
+    .myproduct:hover{
+        box-shadow: 5px 5px 5px #666;   
+        background:khaki;
     }
 </style>
 
 <div style="height: 100px;"></div>
-<div>
 
-
-<div class="container">
+<div class="container-fluid">
     <div class="row">
     {% for hinhsanpham in ds_hinhsanpham %}
-        <div class="col-md-4">
+        <div class="col-md-4 preproduct">
         <div class="myproduct">
             <div class="row">
                 <div class="col-md-4 col-xs-6">
@@ -52,8 +54,7 @@ Login
                     </div>
                     <div class="row mx-auto">
                         <span style="color: red;"><small><b>{{ hinhsanpham.sp_gia }}</b></small></span>
-                    </div>
-                    
+                    </div>                    
                 </div>
                 <div class="col-md-8 col-xs-6" style="font-size: 1.1em;">
                     <b>{{ hinhsanpham.sp_ten }}</b><br/>
@@ -68,8 +69,6 @@ Login
     {% endfor %}
     </div>
 </div>
-</div>
-
 
 
 <!-- Optional JavaScript -->

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" class="h-100">
 
 <head>
     <!-- Required meta tags -->
@@ -20,39 +20,26 @@
     <!-- End block title -->
 </head>
 
-<body>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Nền tảng</a>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Tìm kiếm" aria-label="Search">
-        <ul class="navbar-nav px-3">
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">Đăng xuất</a>
-            </li>
-        </ul>
-    </nav>
+<body class="d-flex flex-column h-100">
+    <!-- header -->
+    {{ include('backend/layouts/includes/header.html.twig') }}
+    <!-- end header -->
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <span data-feather="home"></span>
-                                Bảng tin <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <!-- sidebar -->
+            {{ include('backend/layouts/includes/sidebar.html.twig') }}
+            <!-- end sidebar -->
 
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <main role="main" class="col-md-10 ml-sm-auto px-4 mb-2">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                      <!-- Block headline - Đục lỗ trên giao diện bố cục chung, đặt tên là `headline` -->
-                      {% block headline %}
-                      {% endblock %}
-                      <!-- End block headline -->
+                    <h1 class="h2">
+                        <!-- Block headline - Đục lỗ trên giao diện bố cục chung, đặt tên là `headline` -->
+                        {% block headline %}
+                        {% endblock %}
+                        <!-- End block headline -->
+                    </h1>
                 </div>
 
                 <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
@@ -63,6 +50,10 @@
         </div>
     </div>
 
+    <!-- footer -->
+    {{ include('backend/layouts/includes/footer.html.twig') }}
+    <!-- end footer -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/babyshop/assets/vendor/jquery/jquery.min.js"></script>
@@ -70,8 +61,17 @@
     <script src="/babyshop/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="/babyshop/assets/vendor/feather/feather.min.js"></script>
 
+    <!-- Thư viện Jquery validation -->
+    <script src="/babyshop/assets/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/babyshop/assets/vendor/jquery-validation/localization/messages_vi.min.js"></script>
+
     <!-- Custom script - Các file js do mình tự viết -->
     <script src="/babyshop/assets/backend/js/app.js"></script>
+
+    <!-- Block custom-scripts - Đục lỗ trên giao diện bố cục chung, đặt tên là `custom-scripts` -->
+    {% block customscripts %}
+    {% endblock %}
+    <!-- End block custom-scripts -->
 </body>
 
 </html>

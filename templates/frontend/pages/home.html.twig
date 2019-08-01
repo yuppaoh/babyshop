@@ -16,31 +16,66 @@ Bảng tin
 {# Nội dung trong block content #}
 {% block content %}
 
-        <!-- Masthead -->
-        <header class="masthead text-white text-center">
-          <div class="overlay"></div>
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-9 mx-auto">
-                <h1 class="mb-5">Trang thông tin 4.0</h1>
-              </div>
-              <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-                <form>
-                  <div class="form-row">
-                    <div class="col-12 col-md-9 mb-2 mb-md-0">
-                      <input type="email" class="form-control form-control-lg" placeholder="Email của bạn...">
-                    </div>
-                    <div class="col-12 col-md-3">
-                      <button type="submit" class="btn btn-block btn-lg btn-primary">Đăng nhập!</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
+
+    <!-- Slider -->
+    <style media="screen">
+        #menubar{
+          margin: 0px;
+          padding: 0px;
+        }
+        #carousel-example-generic{
+          margin: 0px;
+          padding: 0px;
+          height: 100x;
+          background: green;
+        }
+      </style>
+    
+    <div class="av" style="margin-top: 64px; margin-bottom: 5px; height: 300px;">
+      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="5000">
+            <img src="/babyshop/img/bg-showcase-2.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </div>
           </div>
-        </header>
-            
-            
+          <div class="carousel-item" data-interval="5000">
+            <img src="/babyshop/img/bg-masthead.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-interval="5000">
+            <img src="/babyshop/img/bg-showcase-3.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+        <!-- Slider END -->
+  
+                    
+        
+    
         <!-- Image Showcases -->
         <section class="showcase">
           <div class="container-fluid p-0">
@@ -126,3 +161,9 @@ Bảng tin
 
 {% endblock %}
 {# End Nội dung trong block content #}
+
+{% block customscripts %}
+<script>
+  $('.carousel').carousel()
+</script>
+{% endblock %}
