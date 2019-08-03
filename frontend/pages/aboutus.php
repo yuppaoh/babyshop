@@ -57,7 +57,6 @@ if(isset($_POST['btnGuiMail']))
         // $siteUrl = siteURL();
         $body = <<<EOT
         Có người liên hệ cần giúp đỡ. <br />
-        Name: $name <br />
         Email của khách: $email <br />
         Chủ để: $title <br />
         Nội dung: <br />
